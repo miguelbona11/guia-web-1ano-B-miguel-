@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Profissional de Desenvolvimento Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav" aria-label="Navegação principal">
+            <a href="index.html" class="logo">
+                <h1>Guia Web</h1>
+            </a>
+            
+            <button id="menu-toggle" aria-controls="nav-menu" aria-expanded="false" class="menu-toggle">
+                <span class="sr-only">Menu</span>
+                <svg width="24" height="24" aria-hidden="true">
+                    <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+
+            <ul id="nav-menu" class="nav-menu">
+                <li><a href="tecnologias.html">Tecnologias</a></li>
+                <li><a href="boas-praticas.html">Boas Práticas</a></li>
+                <li><a href="fluxo.html">Fluxo</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li>
+                    <button id="theme-toggle" aria-label="Alternar tema claro/escuro">
+                        <svg width="24" height="24" aria-hidden="true">
+                            <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>Aprenda Desenvolvimento Web do Zero</h2>
+                <p>Um guia completo sobre HTML, CSS, JavaScript e boas práticas profissionais</p>
+                <a href="#fundamentos" class="btn btn-primary">Começar</a>
+            </div>
+        </section>
+
+        <section id="fundamentos" class="tech-cards">
+            <div class="container">
+                <h2>O que é HTML, CSS e JavaScript?</h2>
+                <p class="section-intro">As três principais tecnologias do desenvolvimento web trabalham em conjunto para criar experiências completas:</p>
+                
+                <div class="card-grid">
+                    <article class="card">
+                        <h3>HTML</h3>
+                        <p>HTML (HyperText Markup Language) é a estrutura fundamental de qualquer página web. É como o esqueleto do site, definindo:</p>
+                        <ul class="feature-list">
+                            <li>Estrutura do conteúdo</li>
+                            <li>Hierarquia da informação</li>
+                            <li>Links e navegação</li>
+                            <li>Formulários e entrada de dados</li>
+                        </ul>
+                        <h4>Exemplo Prático:</h4>
+                        <pre><code>&lt;!-- Estrutura básica de uma página -->
+&lt;header&gt;
+    &lt;h1&gt;Meu Site&lt;/h1&gt;
+    &lt;nav&gt;
+        &lt;a href="/"&gt;Início&lt;/a&gt;
+        &lt;a href="/sobre"&gt;Sobre&lt;/a&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Título do Artigo&lt;/h2&gt;
+        &lt;p&gt;Conteúdo do artigo...&lt;/p&gt;
+        &lt;img src="foto.jpg" alt="Descrição da imagem"&gt;
+    &lt;/article&gt;
+&lt;/main&gt;</code></pre>
+                    </article>
+
+                    <article class="card">
+                        <h3>CSS</h3>
+                        <p>CSS (Cascading Style Sheets) é responsável pela apresentação visual. É como a pele e roupas do site, controlando:</p>
+                        <ul class="feature-list">
+                            <li>Cores e tipografia</li>
+                            <li>Layout e posicionamento</li>
+                            <li>Responsividade</li>
+                            <li>Animações e transições</li>
+                        </ul>
+                        <h4>Exemplo Prático:</h4>
+                        <pre><code>/* Estilos modernos com variáveis CSS */
+:root {
+  --cor-principal: #2563EB;
+  --espacamento: 1rem;
+}
+
+.card {
+  background: white;
+  padding: var(--espacamento);
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Layout responsivo com Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit, 
+    minmax(300px, 1fr)
+  );
+  gap: var(--espacamento);
+}
+
+/* Animações suaves */
+.botao:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s;
+}</code></pre>
+                    </article>
+
+                    <article class="card">
+                        <h3>JavaScript</h3>
+                        <p>JavaScript é o cérebro da aplicação web. É uma linguagem de programação completa que permite:</p>
+                        <ul class="feature-list">
+                            <li>Interatividade com usuário</li>
+                            <li>Manipulação dinâmica do DOM</li>
+                            <li>Requisições assíncronas (AJAX)</li>
+                            <li>Validação de dados</li>
+                        </ul>
+                        <h4>Exemplo Prático:</h4>
+                        <pre><code>// Classe moderna em JavaScript
+class Formulario {
+  constructor(formularioId) {
+    this.form = document.getElementById(formularioId);
+    this.setupValidacao();
+  }
+
+  setupValidacao() {
+    this.form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const dados = new FormData(this.form);
+      const email = dados.get('email');
+      
+      if (this.validarEmail(email)) {
+        this.salvarDados(dados);
+      } else {
+        this.mostrarErro('Email inválido');
+      }
+    });
+  }
+
+  validarEmail(email) {
+    return email.includes('@');
+  }
+
+  mostrarErro(mensagem) {
+    const erro = document.createElement('div');
+    erro.className = 'erro';
+    erro.textContent = mensagem;
+    this.form.appendChild(erro);
+  }
+}</code></pre>
+                    </article>
+                </div>
+
+                <div class="tech-summary">
+                    <h3>Como elas trabalham juntas?</h3>
+                    <p>Imagine um site como uma casa:</p>
+                    <ul class="analogy-list">
+                        <li><strong>HTML</strong> é a estrutura: paredes, portas, janelas</li>
+                        <li><strong>CSS</strong> é o design: cores, decoração, layout</li>
+                        <li><strong>JavaScript</strong> é a funcionalidade: interruptores, eletrodomésticos, sistemas</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <nav aria-label="Navegação do rodapé">
+                <ul>
+                    <li><a href="tecnologias.html">Tecnologias</a></li>
+                    <li><a href="boas-praticas.html">Boas Práticas</a></li>
+                    <li><a href="fluxo.html">Fluxo</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                </ul>
+            </nav>
+            <p>&copy; 2025 Guia Profissional de Desenvolvimento Web</p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
